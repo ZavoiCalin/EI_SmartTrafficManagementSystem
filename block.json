@@ -1,0 +1,25 @@
+# FILE: block.json
+{
+"name": "routing-rf",
+"version": "0.1.0",
+"author": "SmartTraffic",
+"description": "Custom Random Forest routing block — trains a route classifier and weight regressor from snapshot features and exposes inference that returns optimal_route and total_weight.",
+"type": "custom",
+"input": {
+"type": "numeric",
+"shape": [7],
+"description": "[intersection_enc, hour, dow, vehicle_count, pedestrian_count, traffic_light_status, avg_speed]"
+},
+"output": {
+"type": "custom",
+"description": "JSON object with optimal_route (string) and total_weight (float)"
+},
+"training": {
+"entry_point": "training.py",
+"requirements": ["scikit-learn", "pandas", "numpy"]
+},
+"inference": {
+"entry_point": "inference.py",
+"requirements": ["numpy", "scikit-learn"]
+}
+}
