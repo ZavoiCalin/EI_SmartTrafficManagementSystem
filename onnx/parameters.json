@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "type": "machine-learning",
+    "info": {
+        "name": "object_detection_onnx",
+        "description": "object detection model onnx format",
+        "operatesOn": "object_detection",
+        "imageInputScaling": "torch",
+        "indRequiresGpu": false,
+        "objectDetectionLastLayer": "yolov5v5-drpai"
+    },
+    "parameters": []
+}
